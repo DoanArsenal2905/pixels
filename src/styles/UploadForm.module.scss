@@ -1,0 +1,42 @@
+.uploadForm {
+  margin: 30px auto 30px;
+  text-align: center;
+
+  span {
+    font-weight: bold;
+  }
+
+  .btnUpload {
+    border: 0.5px solid #28df99;
+    width: 50px;
+    height: 50px;
+
+    .uploadIcon {
+      color: #28df99;
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: #28df99;
+      border: 0.5px solid #ffffff;
+      
+      .uploadIcon {
+        color: #ffffff;
+      }
+    }
+    &:focus, :active {
+      outline: none;
+    }
+  }
+}
+
+.output {
+  height: 30px;
+  font-size: 15px;
+
+  .error {
+    color: #ff0000;
+    line-height: 30px;
+  }
+}
+

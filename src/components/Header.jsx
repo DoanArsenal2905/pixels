@@ -5,6 +5,7 @@ import { GlobalStyles } from '../themes/global'
 import { useDarkMode } from '../hooks/useDarkMode'
 import { lightTheme, darkTheme } from '../themes/themes'
 import TogglerMode from './TogglerMode'
+import ScrollToTop from './ScrollToTop'
 
 import styles from '../styles/Header.module.scss'
 import photo from '../assets/rainbow_23845.png'
@@ -26,6 +27,7 @@ const Header = () => {
           </div>
           <div className={styles.dark}>
             <TogglerMode theme={theme} toggleTheme={themeToggler} />
+            <ScrollToTop />
           </div>
         </header>
       </>
