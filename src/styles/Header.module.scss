@@ -1,0 +1,33 @@
+.header {
+  background-color: #ffffff;
+  padding: 25px 0px;
+  text-align: center;
+  border-bottom: 0.5px solid #e8e8e8;
+
+  .banner {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    .logo {
+      max-width: 100px;
+      margin: 0 auto 10px;
+    }
+
+    .brand {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 40px;
+      letter-spacing: 5px;
+      color: #f76a8c;
+      margin: 0;
+    }
+
+    .des {
+      font-size: 16px;
+      line-height: 16px;
+      color: #9ba4b4;
+      margin: 10px auto 0;
+    }
+  }
+}
