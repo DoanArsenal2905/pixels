@@ -69,12 +69,15 @@ const UploadForm = () => {
           <p>Select type of photos:</p>
           <div className={styles.select}>
           <Select defaultValue='Select' onChange={selectValue} style={{ width: 200 }}>
+            <Option value='Beach'>Beach</Option>
             <Option value='City'>City</Option>
             <Option value='Flower'>Flower</Option>
             <Option value='Food'>Food</Option>
             <Option value='Fruit'>Fruit</Option>
             <Option value='Juice'>Juice</Option>
             <Option value='Natural'>Natural</Option>
+            <Option value='Ocean'>Ocean</Option>
+            <Option value='Road'>Road</Option>
             <Option value='Other'>Other</Option>
           </Select>
           {type === null ? (

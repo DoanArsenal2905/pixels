@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { FaArrowCircleUp } from 'react-icons/fa'
+import { BsArrowUp } from 'react-icons/bs'
 
 import styles from '../styles/ScrollToTop.module.scss'
 
@@ -19,11 +19,9 @@ const ScrollToTop = () => {
   window.addEventListener('scroll', checkScroll)
 
   return (
-    <FaArrowCircleUp
-      className={styles.scrollTop}
-      onClick={scrollTop}
-      style={{ display: showScroll ? 'flex' : 'none' }}
-    />
+    <div className={showScroll ? `${styles.scrollTop}` : `${styles.none}`}>
+      <BsArrowUp className={styles.iconScroll} onClick={scrollTop} />
+    </div>
   )
 }
 

@@ -1,13 +1,15 @@
 .scrollTop {
   position: fixed;
+  background-color: #f76a8c;
   width: 40px;
   height: 40px;
-  bottom: 10px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
   transition: opacity 0.4s;
+  border-radius: 1px;
   opacity: 0.5;
 
   &:hover {
@@ -22,4 +24,15 @@
       opacity: 0.5;
     }
   }
+}
+
+.none {
+  display: none;
+}
+
+.iconScroll {
+  display: flex;
+  font-size: 30px;
+  color: #ffffff;
+  margin: 5px 5px;
 }

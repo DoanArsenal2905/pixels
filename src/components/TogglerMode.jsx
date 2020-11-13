@@ -18,6 +18,9 @@ const Button = styled.button`
   opacity: 0.6;
   left: 10px;
   background-color: #f76a8c;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
 
   &:hover {
     opacity: 1;
@@ -30,11 +33,13 @@ const Sun = styled(FiSun)`
   color: #ffffff;
   font-size: 25px;
   background: #f76a8c;
+  margin: 5px 0;
 `
 const Moon = styled(FiMoon)`
   color: #ffffff;
   font-size: 25px;
-  background: #f76a8c; 
+  background: #f76a8c;
+  margin: 5px 0;
 `
 
 const TogglerMode = ({ theme, toggleTheme }) => {
