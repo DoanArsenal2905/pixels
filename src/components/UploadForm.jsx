@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { Modal, Button, Select } from 'antd'
-import { BsUpload } from 'react-icons/bs'
+import { Modal, Select, Popover } from 'antd'
+import { BsUpload, BsExclamationCircle } from 'react-icons/bs'
 
 import Progress from './Progress'
 import styles from '../styles/UploadForm.module.scss'
@@ -49,9 +49,9 @@ const UploadForm = () => {
 
   return (
     <div className={styles.uploadForm}>
-      <Button shape='circle' className={styles.btnUpload} onClick={showModal}>
+      <div className={styles.btnUpload} onClick={showModal}>
         <BsUpload className={styles.uploadIcon} />
-      </Button>
+      </div>
       <Modal
         title='Upload Photos'
         visible={visible}
@@ -67,6 +67,7 @@ const UploadForm = () => {
             { errorImage && <div className={styles.error}>{ errorImage }</div> }
           </div>
           <p>Select type of photos:</p>
+          <div className={styles.select}>
           <Select defaultValue='Select' onChange={selectValue} style={{ width: 200 }}>
             <Option value='City'>City</Option>
             <Option value='Flower'>Flower</Option>
@@ -76,12 +77,15 @@ const UploadForm = () => {
             <Option value='Natural'>Natural</Option>
             <Option value='Other'>Other</Option>
           </Select>
-          <div className={styles.output}>
-            { type === null ? <div className={styles.error}>{`Please select type of photo (If you skip, type default: Other)`}</div> : null }
+          {type === null ? (
+            <Popover title='Please select type of photo' content='If you skip, type default: Other' trigger='hover'>
+              <BsExclamationCircle className={styles.warning} />
+            </Popover>
+          ) : null}
           </div>
         </form>
       </Modal>
-      { file ? <div><span>Uploading: </span>{ file.name }</div> : null }
+      { file ? <div style={{ marginTop: 5 }}><span>Uploading: </span>{ file.name }</div> : null }
       { file && <Progress file={file} setFile={setFile} type={type} /> }
     </div>
   )

@@ -1,26 +1,37 @@
 import { notification } from 'antd'
 import { BsBell } from 'react-icons/bs'
-
-import styles from './utils.module.scss'
+import { VscClose } from 'react-icons/vsc'
 
 export const SuccessNoti = () => {
   const noti = 
     notification.open({
-      icon: <BsBell style={{ color: '#ffffff',  }} />,
+      icon: <BsBell style={{ color: '#ffffff' }} />,
       message: <div style={{ color: '#ffffff' }}>Upload Success 👏👏</div>,
-      description: 'Upload photo successfully !!',
-      className: `${styles.successNoti}`,
       style: {
         background: '#00bf9a',
         display: 'flex',
         alignItems: 'center',
         borderRadius: '6px',
-        color: '#ffffff',
-        marginBottom: '1rem',
-      }
+      },
+      closeIcon: <VscClose style={{ color: '#ffffff', fontSize: 20 }} />
     })
 
-  return (
-    {noti}
-  )
+  return {noti}
+}
+
+export const ErrorNoti = () => {
+  const noti = 
+    notification['error']({
+      icon: <BsBell style={{ color: '#ffffff' }} />,
+      message: <div style={{ color: '#ffffff' }}>Upload Error 💀💀</div>,
+      style: {
+        background: '#f76a8c',
+        display: 'flex',
+        alignItems: 'center',
+        borderRadius: '6px',
+      },
+      closeIcon: <VscClose style={{ color: '#ffffff', fontSize: 20 }} />
+    })
+
+  return {noti}
 }

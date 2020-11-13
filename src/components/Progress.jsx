@@ -14,7 +14,7 @@ const Progress = ({ file, setFile, type }) => {
       setFile(null)
       SuccessNoti()
     }
-  }, [url, setFile])
+  }, [url, setFile, type])
 
   return (
     <motion.div className={styles.bar}>

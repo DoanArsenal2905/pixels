@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { projectStorage, projectFirestore, timestamp } from '../firebase'
+import { ErrorNoti } from '../utils'
 
 const useStorage = (file, type) => {
   const [progress, setProgress] = useState(0)
@@ -16,6 +17,7 @@ const useStorage = (file, type) => {
       setProgress(percentage)
     }, err => {
       setError(err)
+      ErrorNoti()
     }, async() => {
       const url = await storageRef.getDownloadURL()
       const createdAt = timestamp()
