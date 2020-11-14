@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 import { Modal, Select, Popover } from 'antd'
-import { BsUpload, BsExclamationCircle } from 'react-icons/bs'
+import { BsExclamationCircle } from 'react-icons/bs'
+import { RiFolderUploadFill } from 'react-icons/ri'
 
 import Progress from './Progress'
 import styles from '../styles/UploadForm.module.scss'
@@ -50,7 +51,7 @@ const UploadForm = () => {
   return (
     <div className={styles.uploadForm}>
       <div className={styles.btnUpload} onClick={showModal}>
-        <BsUpload className={styles.uploadIcon} />
+        <RiFolderUploadFill className={styles.uploadIcon} />
       </div>
       <Modal
         title='Upload Photos'

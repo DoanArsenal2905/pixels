@@ -1,8 +1,28 @@
-.navbar {
+.navBar {
   overflow-x: auto;
+  margin-bottom: 25px;
   padding: 25px 20px;
   display: flex;
-  margin-bottom: 25px;
+  justify-content: center;
+  align-items: center;
   border-bottom: 0.5px solid #e8e8e8;
-  text-align: center;
+  margin: 0 100px;
+}
+
+.tabItem {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 5px;
+  color: #999999;
+  transition: all 0.25s linear 0s;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.active {
+  color: white;
+  background-color: #f76a8c;
+  pointer-events: none;
 }

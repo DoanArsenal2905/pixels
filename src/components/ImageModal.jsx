@@ -1,20 +1,23 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-// import styles from '../styles/Image.module.scss'
+import styles from '../styles/ImageModal.module.scss'
 
 const ImageModal = ({ selectImg, setSelectImg }) => {
   const handleClickImage = e => {
-    if (e.target.classList.contains('back-drop')) setSelectImg(null)
+    if (e.target.classList.contains(styles.backDrop)) setSelectImg(null)
   }
 
   return (
     <motion.div
-      className='back-drop'
+      className={styles.backDrop}
       onClick={handleClickImage}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <div>
+        <p>Doan</p>
+      </div>
       <motion.img
         src={selectImg}
         alt='large-pic'

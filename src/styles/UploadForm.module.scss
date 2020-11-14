@@ -7,22 +7,37 @@
   }
 
   .btnUpload {
-    border: 0.5px solid #28df99;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 50px;
-    line-height: 55px;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #bd93f9;
+    position: relative;
     cursor: pointer;
+    // border: 0.5px solid #bd93f9;
+    // border-radius: 4px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      background-color: currentColor;
+      opacity: 0.2;
+    }
 
     .uploadIcon {
-      color: #28df99;
-      font-size: 20px;
+      // color: #28df99;
+      font-size: 25px;
     }
 
     &:hover {
-      background-color: #28df99;
+      background-color: #bd93f9;
       border: 0.5px solid #ffffff;
       
       .uploadIcon {

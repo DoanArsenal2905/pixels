@@ -23,7 +23,7 @@ const Header = () => {
           <div className={styles.banner}>
             <img className={styles.logo} src={photo} alt="brand img"/>
             <h1 className={styles.brand}>Pixels</h1>
-            <p className={styles.des}>Just a simple place to share a lot of free awesome photos</p>
+            <p className={styles.des}>Awesome free stock photos share to everyone</p>
           </div>
           <div className={styles.dark}>
             <TogglerMode theme={theme} toggleTheme={themeToggler} />
