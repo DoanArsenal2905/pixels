@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { Modal, Select, Popover } from 'antd'
 import { BsExclamationCircle } from 'react-icons/bs'
+import { VscClose } from 'react-icons/vsc'
 import { RiFolderUploadFill } from 'react-icons/ri'
 
 import Progress from './Progress'
@@ -56,9 +57,14 @@ const UploadForm = () => {
       <Modal
         title='Upload Photos'
         visible={visible}
-        onOk={() => selectPhoto(fileUp, type)}
-        onCancel={handleCancel}
-        okText='Upload'
+        closeIcon={<VscClose style={{ fontSize: 20 }} />}
+        footer={
+          <div className={styles.modalFooter}>
+            <div className={styles.cancel} onClick={handleCancel}>Cancel</div>
+            <div className={styles.upload} onClick={() => selectPhoto(fileUp, type)}>Upload</div>
+          </div>
+          
+        }
       >
         <form>
           <label className={styles.add}>
@@ -67,7 +73,7 @@ const UploadForm = () => {
           <div className={styles.output}>
             { errorImage && <div className={styles.error}>{ errorImage }</div> }
           </div>
-          <p>Select type of photos:</p>
+          <h4>Select type of photos:</h4>
           <div className={styles.select}>
           <Select defaultValue='Select' onChange={selectValue} style={{ width: 200 }}>
             <Option value='Beach'>Beach</Option>
