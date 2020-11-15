@@ -6,11 +6,13 @@ import ImageModal from './components/ImageModal'
 import Navbar from './components/Navbar'
 import UploadForm from './components/UploadForm'
 
+import './index.scss'
+
 const App = () => {
   const [selectedImg, setSelectedImg] = useState(null)
 
   return (
-    <div>
+    <div className='App'>
       <Header />
       <Navbar />
       <UploadForm />

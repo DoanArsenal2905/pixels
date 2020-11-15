@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   border-bottom: 0.5px solid #e8e8e8;
-  margin: 0 100px;
 }
 
 .tabItem {
@@ -25,4 +24,10 @@
   color: white;
   background-color: #f76a8c;
   pointer-events: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .navBar {
+    justify-content: flex-start;
+  }
 }

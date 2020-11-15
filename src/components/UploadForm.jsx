@@ -4,6 +4,7 @@ import { Modal, Select, Popover } from 'antd'
 import { BsExclamationCircle } from 'react-icons/bs'
 import { VscClose } from 'react-icons/vsc'
 import { RiFolderUploadFill } from 'react-icons/ri'
+import { BiDownArrow } from 'react-icons/bi'
 
 import Progress from './Progress'
 import styles from '../styles/UploadForm.module.scss'
@@ -57,14 +58,15 @@ const UploadForm = () => {
       <Modal
         title='Upload Photos'
         visible={visible}
-        closeIcon={<VscClose style={{ fontSize: 20 }} />}
+        closeIcon={<VscClose onClick={handleCancel} style={{ fontSize: 20 }} />}
+        onCancel={handleCancel}
         footer={
           <div className={styles.modalFooter}>
             <div className={styles.cancel} onClick={handleCancel}>Cancel</div>
             <div className={styles.upload} onClick={() => selectPhoto(fileUp, type)}>Upload</div>
           </div>
-          
         }
+        style={{ top: 50 }}
       >
         <form>
           <label className={styles.add}>
@@ -75,7 +77,12 @@ const UploadForm = () => {
           </div>
           <h4>Select type of photos:</h4>
           <div className={styles.select}>
-          <Select defaultValue='Select' onChange={selectValue} style={{ width: 200 }}>
+          <Select
+            defaultValue='Select...'
+            onChange={selectValue}
+            style={{ width: 200 }}
+            suffixIcon={<BiDownArrow />}
+          >
             <Option value='Beach'>Beach</Option>
             <Option value='City'>City</Option>
             <Option value='Flower'>Flower</Option>
