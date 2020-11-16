@@ -4,6 +4,21 @@ import { func, string } from 'prop-types'
 import styled from 'styled-components'
 import { FiSun, FiMoon } from 'react-icons/fi'
 
+const TogglerMode = ({ theme, toggleTheme }) => {
+  const btnSwitch = theme === 'light' ? <Moon /> : <Sun />
+
+  return (
+    <Button style={{ background: '#f76a8c' }} onClick={toggleTheme}>
+      {btnSwitch}
+    </Button>
+  )
+}
+
+TogglerMode.propTypes = {
+  theme: string.isRequired,
+  toggleTheme: func.isRequired
+}
+
 const Button = styled.button`
   position: fixed;
   width: 40px;
@@ -41,20 +56,5 @@ const Moon = styled(FiMoon)`
   background: #f76a8c;
   margin: 5px 0;
 `
-
-const TogglerMode = ({ theme, toggleTheme }) => {
-  const btnSwitch = theme === 'light' ? <Moon /> : <Sun />
-
-  return (
-    <Button style={{ background: '#f76a8c' }} onClick={toggleTheme}>
-      {btnSwitch}
-    </Button>
-  )
-}
-
-TogglerMode.propTypes = {
-  theme: string.isRequired,
-  toggleTheme: func.isRequired
-}
 
 export default TogglerMode

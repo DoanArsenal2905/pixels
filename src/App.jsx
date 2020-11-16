@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Footer from './components/Footer'
 
 import GridImages from './components/GridImages'
 import Header from './components/Header'
@@ -10,14 +11,16 @@ import './index.scss'
 
 const App = () => {
   const [selectedImg, setSelectedImg] = useState(null)
+  const [filterLists, setFilterLists] = useState('All')
 
   return (
     <div className='App'>
       <Header />
-      <Navbar />
+      <Navbar setFilterLists={setFilterLists} />
       <UploadForm />
-      <GridImages setSelectedImg={setSelectedImg} />
+      <GridImages setSelectedImg={setSelectedImg} filterLists={filterLists} />
       {selectedImg && <ImageModal selectImg={selectedImg} setSelectImg={setSelectedImg} />}
+      <Footer />
     </div>
   )
 }
