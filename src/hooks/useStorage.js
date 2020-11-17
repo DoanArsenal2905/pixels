@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { projectStorage, projectFirestore, timestamp } from '../firebase'
 import { ErrorNoti } from '../utils'
 
-const useStorage = (file, type) => {
+const useStorage = (file, type, name) => {
+  console.log(name);
   const [progress, setProgress] = useState(0)
   const [error, setError] = useState(null)
   const [url, setUrl] = useState(null)
@@ -22,13 +23,14 @@ const useStorage = (file, type) => {
       const url = await storageRef.getDownloadURL()
       const createdAt = timestamp()
       const typeImg = type === null ? 'Other' : type
-      collectionRef.add({ url, createdAt, typeImg })
+      const contributorName = name
+      collectionRef.add({ url, createdAt, typeImg, contributorName })
       setUrl(url)
       setCreatedAt(createdAt)
     })
-  }, [file, type])
+  }, [file, type, name])
 
-  return { progress, error, url, createdAt }
+  return { progress, error, url, createdAt, name }
 }
 
 export default useStorage

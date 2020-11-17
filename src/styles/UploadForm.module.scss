@@ -58,6 +58,32 @@
   margin-left: 10px;
 }
 
+.contributor {
+  padding: 8px;
+  width: 75%;
+  display: block;
+  border: 1px solid #b5bfc9;
+  border-radius: 4px;
+  color: #0d1f36;
+  font-size: 15px;
+  outline: none;
+  background-color: white;
+  transition: all 0.2s ease;
+
+  &::-webkit-input-placeholder {
+    color: #8d97a9;
+  }
+
+  &::-moz-input-placeholder {
+    color: #8d97a9;
+ }
+
+  &:focus {
+    border-color: #9ddfd3;
+    box-shadow: 0 0 0 2px #dbf6e9;
+  }
+}
+
 .output {
   height: 30px;
   font-size: 15px;

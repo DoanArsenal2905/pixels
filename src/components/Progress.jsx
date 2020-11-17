@@ -6,15 +6,15 @@ import useStorage from '../hooks/useStorage'
 import styles from '../styles/Progress.module.scss'
 import { SuccessNoti } from '../utils'
 
-const Progress = ({ file, setFile, type }) => {
-  const {url, progress} = useStorage(file, type)
+const Progress = ({ file, setFile, type, name }) => {
+  const {url, progress} = useStorage(file, type, name)
 
   useEffect(() => {
     if (url) {
       setFile(null)
       SuccessNoti()
     }
-  }, [url, setFile, type])
+  }, [url, setFile, type, name])
 
   return (
     <motion.div className={styles.bar}>

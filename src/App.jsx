@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Footer from './components/Footer'
 
+import Footer from './components/Footer'
 import GridImages from './components/GridImages'
 import Header from './components/Header'
 import ImageModal from './components/ImageModal'

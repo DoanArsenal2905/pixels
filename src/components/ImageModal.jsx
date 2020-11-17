@@ -11,19 +11,22 @@ const ImageModal = ({ selectImg, setSelectImg }) => {
   return (
     <motion.div
       className={styles.backDrop}
-      onClick={handleClickImage}
+      onClick={e => handleClickImage(e)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div>
-        <p>Doan</p>
-      </div>
-      <motion.img
-        src={selectImg}
-        alt='large-pic'
+      <motion.div
+        style={{ background: '#ffffff', margin: '50px auto', maxHeight: '100%', maxWidth: '60%', borderRadius: 5 }}
         initial={{ y: '-100vh' }}
         animate={{ y: 0 }}
-      />
+      >
+        <p>Doan</p>
+        <img
+          src={selectImg}
+          alt='large-pic'
+        />
+        <p>arsenal</p>
+      </motion.div>
     </motion.div>
   )
 }

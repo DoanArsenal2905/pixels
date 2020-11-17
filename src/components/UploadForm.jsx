@@ -17,17 +17,28 @@ const UploadForm = () => {
   const [errorImage, setErrorImage] = useState(null)
   const [fileUp, setFileUp] = useState(null)
   const [type, setType] = useState(null)
+  const [name, setName]  = useState('')
+  const [errorName, setErrorName] = useState(null)
 
   const imageTypes = ['image/png', 'image/jpeg']
 
   const selectPhoto = fileUp => {
-    if (fileUp && imageTypes.includes(fileUp.type)) {
+    if ((fileUp && imageTypes.includes(fileUp.type)) && name !== '') {
       setFile(fileUp)
       setErrorImage('')
+      setErrorName('')
       setVisible(false)
+    } else if ((fileUp && imageTypes.includes(fileUp.type)) && name === '') {
+      setErrorImage('')
+      setErrorName('Please enter your name')
+    } else if (fileUp === null && name !== '') {
+      setFileUp(null)
+      setErrorName('')
+      setErrorImage('Please select an image file (png or jpeg)')
     } else {
       setFileUp(null)
       setErrorImage('Please select an image file (png or jpeg)')
+      setErrorName('Please enter your name')
     }
   }
 
@@ -50,6 +61,12 @@ const UploadForm = () => {
     setType(value)
   }
 
+  const handleChangeName = e => {
+    const contri = e.target.value
+    setName(contri)
+    e.preventDefault()
+  }
+
   return (
     <div className={styles.uploadForm}>
       <div className={styles.btnUpload} onClick={showModal}>
@@ -63,7 +80,7 @@ const UploadForm = () => {
         footer={
           <div className={styles.modalFooter}>
             <div className={styles.cancel} onClick={handleCancel}>Cancel</div>
-            <div className={styles.upload} onClick={() => selectPhoto(fileUp, type)}>Upload</div>
+            <div className={styles.upload} onClick={() => selectPhoto(fileUp)}>Upload</div>
           </div>
         }
         style={{ top: 50 }}
@@ -74,6 +91,10 @@ const UploadForm = () => {
           </label>
           <div className={styles.output}>
             { errorImage && <div className={styles.error}>{ errorImage }</div> }
+          </div>
+          <input type='text' value={name} className={styles.contributor} placeholder='Name...' onChange={handleChangeName} required={true} />
+          <div className={styles.output}>
+            { errorName && <div className={styles.error}>{ errorName }</div> }
           </div>
           <h4>Select type of photos:</h4>
           <div className={styles.select}>
@@ -103,7 +124,7 @@ const UploadForm = () => {
         </form>
       </Modal>
       { file ? <div style={{ marginTop: 5 }}><span>Uploading: </span>{ file.name }</div> : null }
-      { file && <Progress file={file} setFile={setFile} type={type} /> }
+      { file && <Progress file={file} setFile={setFile} type={type} name={name} /> }
     </div>
   )
 }
