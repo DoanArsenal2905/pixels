@@ -107,9 +107,9 @@ const UploadForm = () => {
             <Option value='Beach'>Beach</Option>
             <Option value='City'>City</Option>
             <Option value='Flower'>Flower</Option>
-            <Option value='Food'>Food</Option>
             <Option value='Fruit'>Fruit</Option>
-            <Option value='Juice'>Juice</Option>
+            <Option value='Game'>Game</Option>
+            <Option value='Mountion'>Mountion</Option>
             <Option value='Natural'>Natural</Option>
             <Option value='Ocean'>Ocean</Option>
             <Option value='Road'>Road</Option>

@@ -1,0 +1,78 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+
+  .author {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .socials {
+    display: flex;
+    margin-left: 10px;
+
+    .fb {
+      width: 30px;
+      height: 30px;
+      margin: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background-color: #3b5999;
+      position: relative;
+      border-radius: 4px;
+      cursor: pointer;
+  
+      .fbIcon {
+        font-size: 15px;
+      }
+  
+      &:hover {
+        opacity: 0.8;
+      }
+      
+      &:focus, :active {
+        outline: none;
+      }
+    }
+
+    .github {
+      width: 30px;
+      height: 30px;
+      margin: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background-color: #393e46;
+      position: relative;
+      border-radius: 4px;
+      cursor: pointer;
+
+      .githubIcon {
+        font-size: 15px;
+      }
+  
+      &:hover {
+        opacity: 0.8;
+      }
+      
+      &:focus, :active {
+        outline: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .author {
+      font-size: 13px;
+    }
+
+    .socials {
+      margin-left: 5px;
+    }
+  }
+}

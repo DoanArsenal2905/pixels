@@ -7,8 +7,8 @@
   }
 
   .btnUpload {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin: 5px;
     display: inline-flex;
     align-items: center;
@@ -26,7 +26,7 @@
       height: 100%;
       border-radius: 4px;
       background-color: currentColor;
-      opacity: 0.2;
+      opacity: 0.3;
     }
 
     .uploadIcon {
@@ -41,6 +41,7 @@
         color: #ffffff;
       }
     }
+    
     &:focus, :active {
       outline: none;
     }

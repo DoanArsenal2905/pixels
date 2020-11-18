@@ -1,12 +1,21 @@
 import React from 'react'
+
 import { motion } from 'framer-motion'
+import { RiFolderDownloadLine } from 'react-icons/ri'
+import { FaFacebook, FaInstagram } from 'react-icons/fa'
 
 import styles from '../styles/ImageModal.module.scss'
 
-const ImageModal = ({ selectImg, setSelectImg }) => {
+const ImageModal = ({ selectedImg, setSelectedImg, selectedCreatedAt, setselectedCreatedAt, selectedContributorName, setselectedContributorName }) => {
   const handleClickImage = e => {
-    if (e.target.classList.contains(styles.backDrop)) setSelectImg(null)
+    if (e.target.classList.contains(styles.backDrop)) setSelectedImg(null)
   }
+
+  const handleClickDownloadImage = () => {
+    window.open(selectedImg, '_blank')
+  }
+
+  const theme = localStorage.getItem('theme')
 
   return (
     <motion.div
@@ -16,16 +25,38 @@ const ImageModal = ({ selectImg, setSelectImg }) => {
       animate={{ opacity: 1 }}
     >
       <motion.div
-        style={{ background: '#ffffff', margin: '50px auto', maxHeight: '100%', maxWidth: '60%', borderRadius: 5 }}
+        className={theme === 'light' ? `${styles.popupModal} ${styles.light}` : `${styles.popupModal} ${styles.dark}`}
         initial={{ y: '-100vh' }}
         animate={{ y: 0 }}
       >
-        <p>Doan</p>
-        <img
-          src={selectImg}
-          alt='large-pic'
-        />
-        <p>arsenal</p>
+        <section className={styles.modalHeader}>
+          <article className={styles.leftHeader}>
+            <div className={styles.contriName}>
+              <span className={styles.name} style={{ fontWeight: 'bold', fontSize: 16 }}>Contributor:&nbsp;</span><span style={{ fontSize: 15 }}>{selectedContributorName}</span>
+            </div>
+          </article>
+          <div className={styles.rightHeader}>
+            <div className={styles.btnDownload} onClick={handleClickDownloadImage}>
+              <RiFolderDownloadLine className={styles.downIcon} />
+            </div>
+          </div>
+        </section>
+        <section>
+          <img
+            src={selectedImg}
+            alt='large-pic'
+          />
+        </section>
+        <footer className={styles.footer}>
+          <div className={styles.shareFb}>
+            <FaFacebook />
+            <span>Share this photos on Facebook</span>
+          </div>
+          <div className={styles.shareInsta}>
+            <FaInstagram />
+            <span>Share this photos on Instagram</span>
+          </div>
+        </footer>
       </motion.div>
     </motion.div>
   )

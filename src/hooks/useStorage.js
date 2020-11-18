@@ -3,7 +3,6 @@ import { projectStorage, projectFirestore, timestamp } from '../firebase'
 import { ErrorNoti } from '../utils'
 
 const useStorage = (file, type, name) => {
-  console.log(name);
   const [progress, setProgress] = useState(0)
   const [error, setError] = useState(null)
   const [url, setUrl] = useState(null)

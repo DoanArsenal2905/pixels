@@ -23,9 +23,9 @@ const Navbar = ({ setFilterLists }) => {
       <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Beach</span>
       <span className={styles.tabItem} onClick={(e) => filterImages(e)}>City</span>
       <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Flower</span>
-      <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Food</span>
       <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Fruit</span>
-      <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Juice</span>
+      <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Game</span>
+      <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Mountain</span>
       <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Natural</span>
       <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Ocean</span>
       <span className={styles.tabItem} onClick={(e) => filterImages(e)}>Road</span>

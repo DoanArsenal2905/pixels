@@ -11,6 +11,8 @@ import './index.scss'
 
 const App = () => {
   const [selectedImg, setSelectedImg] = useState(null)
+  const [selectedCreatedAt, setselectedCreatedAt] = useState(null)
+  const [selectedContributorName, setselectedContributorName] = useState(null)
   const [filterLists, setFilterLists] = useState('All')
 
   return (
@@ -18,8 +20,22 @@ const App = () => {
       <Header />
       <Navbar setFilterLists={setFilterLists} />
       <UploadForm />
-      <GridImages setSelectedImg={setSelectedImg} filterLists={filterLists} />
-      {selectedImg && <ImageModal selectImg={selectedImg} setSelectImg={setSelectedImg} />}
+      <GridImages
+        setSelectedImg={setSelectedImg}
+        setselectedCreatedAt={setselectedCreatedAt}
+        setselectedContributorName={setselectedContributorName}
+        filterLists={filterLists}
+      />
+      {selectedImg && 
+        <ImageModal
+          selectedImg={selectedImg}
+          setSelectedImg={setSelectedImg}
+          selectedCreatedAt={selectedCreatedAt}
+          setselectedCreatedAt={setselectedCreatedAt}
+          selectedContributorName={selectedContributorName}
+          setselectedContributorName={setselectedContributorName}
+        />
+      }
       <Footer />
     </div>
   )
