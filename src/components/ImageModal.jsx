@@ -2,7 +2,14 @@ import React from 'react'
 
 import { motion } from 'framer-motion'
 import { RiFolderDownloadLine } from 'react-icons/ri'
-import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TumblrShareButton,
+  TumblrIcon,
+  TwitterShareButton,
+  TwitterIcon
+} from 'react-share'
 
 import styles from '../styles/ImageModal.module.scss'
 
@@ -18,6 +25,8 @@ const ImageModal = ({ selectedImg, setSelectedImg, selectedCreatedAt, setselecte
   }
 
   const theme = localStorage.getItem('theme')
+
+  const title = 'Pixels - Free photos for everyone'
 
   return (
     <motion.div
@@ -54,12 +63,27 @@ const ImageModal = ({ selectedImg, setSelectedImg, selectedCreatedAt, setselecte
         </section>
         <footer className={styles.footer}>
           <span className={styles.shareText}>Share to:</span>
-          <div className={styles.shareFb}>
-            <FaFacebook />
-          </div>
-          <div className={styles.shareInsta}>
-            <FaInstagram />
-          </div>
+          <FacebookShareButton
+            url={selectedImg}
+            quote={title}
+            className={styles.btnShare}
+          >
+            <FacebookIcon size={30} borderRadius={4} />
+          </FacebookShareButton>
+          <TumblrShareButton
+            url={selectedImg}
+            quote={title}
+            className={styles.btnShare}
+          >
+            <TumblrIcon size={30} borderRadius={4} />
+          </TumblrShareButton>
+          <TwitterShareButton
+            url={selectedImg}
+            quote={title}
+            className={styles.btnShare}
+          >
+            <TwitterIcon size={30} borderRadius={4} />
+          </TwitterShareButton>
         </footer>
       </motion.div>
     </motion.div>

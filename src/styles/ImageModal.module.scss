@@ -91,18 +91,11 @@
         font-weight: 500;
       }
 
-      .shareFb {
-        width: 30px;
-        height: 30px;
-        margin: 3px;
+      .btnShare {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        color: #ffffff;
-        background-color: #3b5999;
-        position: relative;
-        border-radius: 4px;
-        cursor: pointer;
+        margin-right: 5px;
 
         &:hover {
           opacity: 0.8;
@@ -112,29 +105,7 @@
           outline: none;
         }
       }
-
-      .shareInsta {
-        width: 30px;
-        height: 30px;
-        margin: 3px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        background-color: #e4405f;
-        position: relative;
-        border-radius: 4px;
-        cursor: pointer;
-
-        &:hover {
-          opacity: 0.8;
-        }
-        
-        &:focus, :active {
-          outline: none;
-        }
       }
-    }
   }
 
   .light {
