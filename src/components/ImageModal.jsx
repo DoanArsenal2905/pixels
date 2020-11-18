@@ -11,6 +11,8 @@ const ImageModal = ({ selectedImg, setSelectedImg, selectedCreatedAt, setselecte
     if (e.target.classList.contains(styles.backDrop)) setSelectedImg(null)
   }
 
+  const create = new Date(selectedCreatedAt.seconds * 1000).toLocaleString()
+
   const handleClickDownloadImage = () => {
     window.open(selectedImg, '_blank')
   }
@@ -25,14 +27,17 @@ const ImageModal = ({ selectedImg, setSelectedImg, selectedCreatedAt, setselecte
       animate={{ opacity: 1 }}
     >
       <motion.div
-        className={theme === 'light' ? `${styles.popupModal} ${styles.light}` : `${styles.popupModal} ${styles.dark}`}
+        className={theme && theme === 'dark' ? `${styles.popupModal} ${styles.dark}` : `${styles.popupModal} ${styles.light}`}
         initial={{ y: '-100vh' }}
         animate={{ y: 0 }}
       >
         <section className={styles.modalHeader}>
           <article className={styles.leftHeader}>
-            <div className={styles.contriName}>
-              <span className={styles.name} style={{ fontWeight: 'bold', fontSize: 16 }}>Contributor:&nbsp;</span><span style={{ fontSize: 15 }}>{selectedContributorName}</span>
+            <div>
+              <span className={styles.contriTextBold}>Contributor:&nbsp;</span><span className={styles.contriText}>{selectedContributorName}</span>
+            </div>
+            <div>
+              <span className={styles.contriTextBold}>Created At:&nbsp;</span><span className={styles.contriText}>{create}</span>
             </div>
           </article>
           <div className={styles.rightHeader}>
@@ -48,11 +53,11 @@ const ImageModal = ({ selectedImg, setSelectedImg, selectedCreatedAt, setselecte
           />
         </section>
         <footer className={styles.footer}>
-          <span>Share to:</span>
-          <div>
+          <span className={styles.shareText}>Share to:</span>
+          <div className={styles.shareFb}>
             <FaFacebook />
           </div>
-          <div>
+          <div className={styles.shareInsta}>
             <FaInstagram />
           </div>
         </footer>

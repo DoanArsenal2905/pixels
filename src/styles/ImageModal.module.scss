@@ -14,11 +14,19 @@
     .modalHeader {
       display: flex;
       justify-content: space-between;
-      padding: 10px 80px 0;
+      padding: 10px 75px 0;
   
       .leftHeader {
-        display: flex;
-        align-items: center;
+        display: block;
+
+        .contriTextBold {
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        .contriText {
+          font-size: 15px;
+        }
       }
   
       .rightHeader {
@@ -75,7 +83,57 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 10px 80px 15px;
+      padding: 10px 75px 15px;
+
+      .shareText {
+        margin-right: 5px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .shareFb {
+        width: 30px;
+        height: 30px;
+        margin: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        background-color: #3b5999;
+        position: relative;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+        
+        &:focus, :active {
+          outline: none;
+        }
+      }
+
+      .shareInsta {
+        width: 30px;
+        height: 30px;
+        margin: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        background-color: #e4405f;
+        position: relative;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+        
+        &:focus, :active {
+          outline: none;
+        }
+      }
     }
   }
 
@@ -102,6 +160,23 @@
   
       .modalHeader {
         padding: 15px 15px 0;
+
+        .leftHeader {
+          .contriTextBold {
+            font-weight: bold;
+            font-size: 14px;
+          }
+  
+          .contriText {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .footer {
+        .shareText {
+          font-size: 14px;
+        }
       }
     }
   }
