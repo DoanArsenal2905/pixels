@@ -48,13 +48,12 @@ const ImageModal = ({ selectedImg, setSelectedImg, selectedCreatedAt, setselecte
           />
         </section>
         <footer className={styles.footer}>
-          <div className={styles.shareFb}>
+          <span>Share to:</span>
+          <div>
             <FaFacebook />
-            <span>Share this photos on Facebook</span>
           </div>
-          <div className={styles.shareInsta}>
+          <div>
             <FaInstagram />
-            <span>Share this photos on Instagram</span>
           </div>
         </footer>
       </motion.div>

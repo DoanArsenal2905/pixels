@@ -14,7 +14,7 @@
     .modalHeader {
       display: flex;
       justify-content: space-between;
-      padding: 20px 80px 0;
+      padding: 10px 80px 0;
   
       .leftHeader {
         display: flex;
@@ -73,14 +73,9 @@
 
     .footer {
       display: flex;
-    }
-
-    @media only screen and (max-width: 500px) {
-      .footer {
-        width: 100%;
-        display: inline-block;
-        text-align: center;
-      }
+      justify-content: center;
+      align-items: center;
+      padding: 10px 80px 15px;
     }
   }
 
@@ -96,7 +91,7 @@
     display: block;
     max-width: 85%;
     max-height: 750px;
-    margin: 20px auto;
+    margin: 10px auto;
     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
     border: 3px solid #ffffff;
   }
